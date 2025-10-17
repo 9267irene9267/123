@@ -1,0 +1,72 @@
+## ==============================
+##   .NET / Visual Studio Ignore
+## ==============================
+
+# 使用者特定檔案
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# 建置結果
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+TestResults/
+*.VisualState.xml
+*.cache
+*.pdb
+
+# .NET 發行與封裝
+*.exe
+*.dll
+*.app
+*.appx
+*.apk
+*.aab
+*.msix
+*.msi
+*.zip
+*.tar.gz
+*.nupkg
+
+# NuGet Packages
+*.nupkg
+*.snupkg
+**/packages/*
+!**/packages/build/
+!**/packages/repositories.config
+
+# ASP.NET 暫存檔案
+wwwroot/lib/
+node_modules/
+bower_components/
+
+# Visual Studio Code
+.vscode/
+.history/
+*.code-workspace
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# 使用者設定
+*.env
+*.local.json
+appsettings.Development.json
+
+# Publish output
+publish/
+dist/
+
+# Docker
+docker-compose.override.yml
+.env
+
+# git
+*.orig
+
+.vs
