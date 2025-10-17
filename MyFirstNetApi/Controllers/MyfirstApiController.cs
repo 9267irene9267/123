@@ -36,5 +36,6 @@ namespace MyFirstNetApi.Controllers
         [HttpDelete]
         public string DeleteHello() => "Hello from DELETE";
 
+
     }
 }
