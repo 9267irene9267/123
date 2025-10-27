@@ -1,5 +1,8 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using MyFirstNetApi.Models;
+using MyFirstNetApi.Repository;
+using MyFirstNetApi.Services;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +12,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<iProductRepository, ProductRepository>();
+builder.Services.AddScoped<IProductService, ProductService>();
+
 
 builder.Services.AddDbContext<TestContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
@@ -29,3 +36,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+// 讓測試專案可以存取 Program 類別
+public partial class Program { }

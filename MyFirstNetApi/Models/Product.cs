@@ -13,11 +13,14 @@ public partial class Product
 
     public string? Description { get; set; }
 
-    public DateTime? Createdate { get; set; }
+    public DateTime? CreateDate { get; set; }
 
-    public string? Createuser { get; set; }
+    public string? CreateUser { get; set; }
 
-    public DateTime? Modifydate { get; set; }
+    public DateTime? ModifyDate { get; set; }
 
-    public string? Modifyuser { get; set; }
+    public string? ModifyUser { get; set; }
+
+    public string? CustomerId { get; set; }
+    public int Email { get; internal set; }
 }

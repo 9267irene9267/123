@@ -5,5 +5,11 @@ namespace MyFirstNetApi.Models;
 
 public partial class Student
 {
-    public string? Name { get; set; }
+    public int Id { get; set; }
+
+    public string Name { get; set; } = null!;
+
+    public int? Age { get; set; }
+
+    public string? Email { get; set; }
 }

@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MyFirstNetApi.Models;
+using MyFirstNetApi.Repository;
+using MyFirstNetApi.Services;
 using System.Reflection.Metadata.Ecma335;
 
 namespace MyFirstNetApi.Controllers
@@ -9,33 +11,41 @@ namespace MyFirstNetApi.Controllers
     [ApiController]
     public class MyfirstApiController : ControllerBase
 
-
     {
-
-        private readonly TestContext _context;
-        public MyfirstApiController(TestContext context)
+        private readonly IProductService _productService;
+        public MyfirstApiController(IProductService productService)
         {
-            _context = context;
+            this._productService = productService;
+        }
+        
+        [HttpGet]
+        public IActionResult GetProducts()
+        {
+            var products = _productService.GetProducts();
+            return Ok(products);
+
         }
 
         [HttpGet]
-        public string Hello() => "Hello";
+        public IActionResult GetProductsByName(string name)
+        {
+            var products = _productService.GetProductsByName(name);
+            return Ok(products);
+        }
 
         [HttpGet]
-        public Product[] GetProducts() => this._context.Products.ToArray();
+        public IActionResult GetProductsByNameLinq(string name)
+        {
+            var products = _productService.GetProductsByNameLinq(name);
+            return Ok(products);
+        }
 
         [HttpGet]
-        public Student[] GetStudents() => this._context.Students.ToArray();
-
-        [HttpPost]
-        public string PostHello() => "Hello from POST";
-
-        [HttpPut]
-        public string PutHello() => "Hello from PUT";
-
-        [HttpDelete]
-        public string DeleteHello() => "Hello from DELETE";
-
+        public IActionResult GetProductByPrice(int price)
+        {
+            var products = _productService.GetProductsByPrice(price);
+            return Ok(products);
+        }
 
     }
 }
