@@ -21,5 +21,6 @@ namespace MyFirstNetApi.Services
 
         // 新增此方法
         ResponseBase AddCustomer(CustomerRequest request);
+        ResponseBase UpdateCustomer(CustomerUpdateRequest request);
     }
 }

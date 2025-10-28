@@ -39,6 +39,12 @@ namespace MyFirstNetApi.Controllers
             return Ok(_IProductService.UpdateProduct(request));
 
         }
+
+        [HttpDelete]
+        public IActionResult DeleteProduct(int id)
+        {
+            return Ok(_IProductService.DeleteProduct(id));
+        }
     }
 }
 

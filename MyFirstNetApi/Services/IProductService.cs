@@ -17,5 +17,6 @@ namespace MyFirstNetApi.Services
 
 
         List<Product> GetProductsByNameLinq(string name);
+        object? DeleteProduct(int id);
     }
 }

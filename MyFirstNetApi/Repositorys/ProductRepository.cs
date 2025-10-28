@@ -1,4 +1,5 @@
-﻿using MyFirstNetApi.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using MyFirstNetApi.Models;
 
 namespace MyFirstNetApi.Repository
 {
@@ -36,6 +37,13 @@ namespace MyFirstNetApi.Repository
         public void UpdateProduct(Product product)
         {
             _TestContext.Products.Update(product);
+            _TestContext.SaveChanges();
+        }
+
+    
+        public void DeleteProduct(Product product)
+        {
+            _TestContext.Products.Remove(product);
             _TestContext.SaveChanges();
         }
     }

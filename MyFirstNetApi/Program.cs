@@ -3,6 +3,7 @@ using MyFirstNetApi.Models;
 using MyFirstNetApi.Repository;
 using MyFirstNetApi.Services;
 using System;
+using YourProjectName.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +16,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<iProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
-
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
 
 builder.Services.AddDbContext<TestContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));

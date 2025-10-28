@@ -59,11 +59,12 @@ namespace MyFirstNetApi.Controllers
         }
 
         [HttpPut]
-        public IActionResult UpdateProduct(ProductUpdateRequest request)
+        public IActionResult UpdateCustomer(CustomerUpdateRequest request)
         {
-            return Ok(_productService.AddProduct(request));
+            return Ok(_customerService.UpdateCustomer(request));
+        }
+
         }
     }
-}
 
   

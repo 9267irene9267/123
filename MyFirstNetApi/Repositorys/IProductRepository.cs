@@ -12,5 +12,6 @@ namespace MyFirstNetApi.Repository
 
         void DeleteProduct(long id);
         object GetCustomer();
+        void DeleteProduct(Product entity);
     }
 }

@@ -92,6 +92,48 @@ namespace YourProjectName.Services
             var customers = _ICustomerRepository.GetCustomers().ToList();
             return customers;
         }
+
+        public ResponseBase UpdateCustomer(CustomerUpdateRequest request)
+        {
+            try
+            {
+                //抓取資料
+                var entity = _ICustomerRepository.GetCustomers().Where(p => p.Id == request.Id).FirstOrDefault();
+                //判斷資料是否存在
+                if (entity == null)
+                {
+                    return new ResponseBase
+                    {
+                        Result = false,
+                        Message = "Customer not found"
+                    };
+                }
+                //更新資料
+                entity.Name = request.Name;
+                entity.Email = request.Email ;
+                entity.Address = request.Address;
+                //將 DateTime 轉換為 DateOnly
+                entity.ModifyDate = DateOnly.FromDateTime(DateTime.Now);
+                entity.ModifyUser = "System";
+
+                //更新資料庫
+                _ICustomerRepository.UpdateCustomer(entity);
+            }
+            catch (Exception ex)
+            {
+                return new ResponseBase
+                {
+                    Result = false,
+                    Message = $"Error updating customer: {ex.Message}"
+                };
+            }
+            //回傳成功結果
+            return new ResponseBase
+            {
+                Result = true,
+                Message = "Update customer success"
+            };
+        }
     }
 }
 

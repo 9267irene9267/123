@@ -5,6 +5,8 @@ namespace MyFirstNetApi.Repository
     public class CustomerRepository : ICustomerRepository
     {
         private readonly TestContext _context;
+        private object _TestContext;
+
         public CustomerRepository()
         {
             _context = new TestContext();
@@ -30,6 +32,7 @@ namespace MyFirstNetApi.Repository
         public void UpdateCustomer(Customer name)
         {
             _context.Customers.Update(name);
+            _context.SaveChanges();
         }
 
     }

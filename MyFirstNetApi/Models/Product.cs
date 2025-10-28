@@ -22,5 +22,4 @@ public partial class Product
     public string? ModifyUser { get; set; }
 
     public string? CustomerId { get; set; }
-    public int Email { get; internal set; }
 }
