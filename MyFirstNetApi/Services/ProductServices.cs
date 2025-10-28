@@ -8,11 +8,10 @@ namespace MyFirstNetApi.Services
     public class ProductService : IProductService
     {
         private readonly iProductRepository _productRepository;
-        private readonly TestContext _context;
-        public ProductService(iProductRepository productRepository, TestContext context)
+
+        public ProductService(iProductRepository productRepository)
         {
             _productRepository = productRepository;
-            _context = context;
         }
 
         public ResponseBase AddProduct(ProductRequest request)
