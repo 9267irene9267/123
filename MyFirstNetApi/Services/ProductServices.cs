@@ -51,11 +51,6 @@ namespace MyFirstNetApi.Services
             return response;
         }
 
-        public ResponseBase addProduct(ProductRequest product)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Product> GetProducts()
         {
             return _productRepository.GetProduct().ToList();

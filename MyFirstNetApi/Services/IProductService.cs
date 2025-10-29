@@ -7,7 +7,7 @@ namespace MyFirstNetApi.Services
     public interface IProductService
     {
         List<Product> GetProducts();
-        ResponseBase addProduct(ProductRequest product);
+        ResponseBase AddProduct(ProductRequest request);
         ResponseBase UpdateProduct(ProductUpdateRequest request);
         List<Product> GetProductsByPrice(int price);
 

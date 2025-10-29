@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using MyFirstNetApi.Dto.Request;
 using MyFirstNetApi.Services;
+using NLog;
 
 namespace MyFirstNetApi.Controllers
 {
@@ -10,10 +12,12 @@ namespace MyFirstNetApi.Controllers
     {
         private readonly ICustomerService _service;
         private readonly IProductService _IProductService;
+        private readonly ILogger<ProductController> _logger;
 
-
-        public ProductController(IProductService iproductServie)
+        public ProductController(ICustomerService service, ILogger<ProductController> logger, IProductService iproductServie)
         {
+            _service = service;
+            _logger = logger;
             _IProductService = iproductServie;
         }
 
@@ -31,7 +35,8 @@ namespace MyFirstNetApi.Controllers
         [HttpPost]
         public IActionResult CreateProduct(ProductRequest request)
         {
-            return Ok(_IProductService.addProduct(request));
+            _logger.LogInformation("CreateProduct called with request: {@request}", request);
+            return Ok(_IProductService.AddProduct(request));
         }
         [HttpPut]
         public IActionResult UpdateProduct(ProductUpdateRequest request)

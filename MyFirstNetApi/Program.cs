@@ -2,6 +2,8 @@
 using MyFirstNetApi.Models;
 using MyFirstNetApi.Repository;
 using MyFirstNetApi.Services;
+using NLog;
+using NLog.Web;
 using System;
 using YourProjectName.Services;
 
@@ -21,10 +23,12 @@ builder.Services.AddScoped<ICustomerService, CustomerService>();
 
 builder.Services.AddDbContext<TestContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
+// Configure the HTTP request pipeline.
+builder.Logging.ClearProviders();
+builder.Host.UseNLog();
 
 var app = builder.Build();
-
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

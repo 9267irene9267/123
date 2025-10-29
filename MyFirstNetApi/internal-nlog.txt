@@ -1,0 +1,12 @@
+2025-10-28 17:07:39.3988 Info Registered target NLog.Targets.FileTarget(Name=fileLog)
+2025-10-28 17:07:39.4105 Info Registered target NLog.Targets.ConsoleTarget(Name=consoleLog)
+2025-10-28 17:07:39.4105 Info NLog, Version=6.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 6.0.5.4631. Product version: 6.0.5+a023270f66a9445456a70c06668acabe7179c723. GlobalAssemblyCache: False
+2025-10-28 17:07:39.4354 Info Configuration initialized: TargetNames=fileLog, consoleLog, ConfigItems=25, AutoReload=true, FilePath=E:\irene\MyFirstNetApi\MyFirstNetApi\bin\Debug\net8.0\nlog.config
+2025-10-28 17:09:48.5195 Info Registered target NLog.Targets.FileTarget(Name=fileLog)
+2025-10-28 17:09:48.5299 Info Registered target NLog.Targets.ConsoleTarget(Name=consoleLog)
+2025-10-28 17:09:48.5468 Info NLog, Version=6.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 6.0.5.4631. Product version: 6.0.5+a023270f66a9445456a70c06668acabe7179c723. GlobalAssemblyCache: False
+2025-10-28 17:09:48.5932 Info Configuration initialized: TargetNames=fileLog, consoleLog, ConfigItems=25, AutoReload=true, FilePath=E:\irene\MyFirstNetApi\MyFirstNetApi\bin\Debug\net8.0\nlog.config
+2025-10-28 17:14:30.0603 Info Registered target NLog.Targets.FileTarget(Name=fileLog)
+2025-10-28 17:14:30.0723 Info Registered target NLog.Targets.ConsoleTarget(Name=consoleLog)
+2025-10-28 17:14:30.0885 Info NLog, Version=6.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 6.0.5.4631. Product version: 6.0.5+a023270f66a9445456a70c06668acabe7179c723. GlobalAssemblyCache: False
+2025-10-28 17:14:30.1191 Info Configuration initialized: TargetNames=fileLog, consoleLog, ConfigItems=25, AutoReload=true, FilePath=E:\irene\MyFirstNetApi\MyFirstNetApi\bin\Debug\net8.0\nlog.config
